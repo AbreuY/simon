@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:elevation="3dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:weightSum="4"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:background="@color/white"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:tint="@color/dark_gray"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_lock_idle_lock"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:padding="@dimen/padding_16dp"
+                    android:orientation="vertical"
+                    android:layout_weight="0.75"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:text="@string/lock_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textSize="12sp"
+                        android:text="@string/lock_app_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <Switch
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:background="@color/white"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:padding="1dp"
+                    android:tint="@color/dark_gray"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/stat_sys_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:padding="@dimen/padding_16dp"
+                    android:orientation="vertical"
+                    android:layout_weight="0.75"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:text="@string/hide_mature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textSize="12sp"
+                        android:text="@string/hide_mature_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <Switch
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/containerRate"
+                android:background="?selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:padding="-1dp"
+                    android:tint="@color/dark_gray"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/star_off"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <LinearLayout
+                    android:padding="@dimen/padding_16dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:text="@string/rate_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textSize="12sp"
+                        android:text="@string/rate_app_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+                android:background="@color/white_semi_blue" android:layout_width="match_parent" android:layout_height="3dp"/>
+
+        <LinearLayout
+                android:id="@+id/containerTos"
+                android:background="?selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:padding="4dp"
+                    android:tint="@color/dark_gray"
+                    android:layout_margin="@dimen/padding_8dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:layout_width="24dp" android:layout_height="24dp"/>
+            <LinearLayout
+                    android:padding="@dimen/padding_16dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:text="@string/tos_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textSize="12sp"
+                        android:text="@string/tos_app_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

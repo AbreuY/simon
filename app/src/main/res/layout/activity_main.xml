@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_home" />
+
+    <FrameLayout
+            android:id="@+id/container"
+            android:background="@color/white_semi_blue"
+            android:layout_below="@id/toolbar"
+            android:layout_above="@id/tab_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:background="@android:color/white"
+            android:id="@+id/tab_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_height="@dimen/height_54dp"
+            android:layout_width="match_parent"
+            app:itemIconTint="@drawable/selector_main"
+            app:itemTextColor="#FFB4BDCB"
+            app:menu="@menu/menu_main" />
+</RelativeLayout>

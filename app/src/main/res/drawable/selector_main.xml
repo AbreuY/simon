@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2018 Winnerawan T
+  ~ Unauthorized copying of this file, via any medium is strictly
+  ~ prohibited Proprietary and confidential
+  ~ Written by Winnerawan T <winnerawan@gmail.com>, June 2018
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/colorAccent" android:state_checked="true"/>
+    <item android:color="@color/colorAccent" android:state_pressed="true"/>
+    <item android:color="#121111"/>
+</selector>

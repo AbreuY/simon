@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_54dp">54dp</dimen>
+    <dimen name="nol_dp">0dp</dimen>
+    <dimen name="width_24dp">24dp</dimen>
+    <dimen name="height_24dp">24dp</dimen>
+    <dimen name="width_32dp">32dp</dimen>
+    <dimen name="height_32dp">32dp</dimen>
+    <dimen name="width_48dp">48dp</dimen>
+    <dimen name="height_48dp">48dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_bottom_80dp">80dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="height_56dp">56dp</dimen>
+    <dimen name="padding_left_22dp">22dp</dimen>
+    <dimen name="padding_right_22dp">22dp</dimen>
+    <dimen name="padding_top_20dp">20dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="padding_bottom_18dp">18dp</dimen>
+    <dimen name="padding_left_10dp">10dp</dimen>
+    <dimen name="padding_right_10dp">10dp</dimen>
+    <dimen name="padding_right_18dp">18dp</dimen>
+    <dimen name="width_74dp">74dp</dimen>
+    <dimen name="height_22dp">22dp</dimen>
+    <dimen name="padding_18dp">18dp</dimen>
+    <dimen name="height_img_content">206.0dip</dimen>
+    <dimen name="height_img_content_2">350.0dip</dimen>
+    <dimen name="height_img_head_line">480.0dip</dimen>
+</resources>

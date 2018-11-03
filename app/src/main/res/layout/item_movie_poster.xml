@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2018 Winnerawan T
+  ~ Unauthorized copying of this file, via any medium is strictly
+  ~ prohibited Proprietary and confidential
+  ~ Written by Winnerawan T <winnerawan@gmail.com>, June 2018
+  -->
+<RelativeLayout android:layout_height="200dp"
+    android:layout_width="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.CardView
+        android:background="@color/colorAccent"
+        android:layout_height="238dp"
+        android:layout_width="140dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="4dp">
+
+
+        <ImageView
+            android:id="@+id/poster"
+            android:scaleType="fitXY"
+            android:layout_width="140dp"
+            android:layout_height="238dp"/>
+
+        <LinearLayout
+            android:background="@color/time_bg"
+            android:padding="@dimen/padding_8dp"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="14sp"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:textColor="@color/white"
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="8dp"
+            android:layout_gravity="end|right"
+            android:gravity="end|right"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RatingBar
+                android:numStars="1"
+                android:visibility="invisible"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|right"
+                android:progressBackgroundTint="#FECB2F"
+                android:rating="1"
+                android:secondaryProgressTint="#FECB2F" />
+
+            <TextView
+                android:paddingRight="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>

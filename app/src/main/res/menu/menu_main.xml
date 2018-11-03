@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2018 Winnerawan T
+  ~ Unauthorized copying of this file, via any medium is strictly
+  ~ prohibited Proprietary and confidential
+  ~ Written by Winnerawan T <winnerawan@gmail.com>, June 2018
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:checked="true"
+        android:icon="@drawable/ic_tab_home"
+        android:title="@string/home"/>
+
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/ic_tab_category"
+        android:title="@string/category"/>
+
+    <item
+        android:id="@+id/movie"
+        android:icon="@drawable/ic_tab_movie"
+        android:title="@string/movie"/>
+
+    <item
+        android:id="@+id/live"
+        android:icon="@drawable/ic_tab_live"
+        android:title="@string/live"/>
+
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_tab_setting"
+        android:title="@string/setting"/>
+</menu>

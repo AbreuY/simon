@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SiMontok</string>
+    <string name="api_retry_error">Please retry!</string>
+    <string name="api_default_error">Something wrong happened!</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="connection_error">Internet connection lost!</string>
+    <string name="app_market_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="app_google_play_store_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="categories">Category</string>
+    <string name="home">Home</string>
+    <string name="category">Category</string>
+    <string name="live">Live</string>
+    <string name="setting">Settings</string>
+    <string name="movie">Movies</string>
+    <string name="live_stream">Live Stream</string>
+    <string name="lock_app">Lock Application</string>
+    <string name="lock_app_desc">Lock application from other user</string>
+    <string name="rate_app">Rate Application</string>
+    <string name="rate_app_desc">Rate application and give 5 star for better update</string>
+    <string name="hide_mature">Hide Mature Content</string>
+    <string name="hide_mature_desc">If this enable, only movies will be shown</string>
+    <string name="tos_app">Term of Use</string>
+    <string name="tos_app_desc">Download and use this application that\'s mean Your age over than 21+</string>
+    <string name="search">Search</string>
+</resources>

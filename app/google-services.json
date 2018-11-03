@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "998440559404",
+    "firebase_url": "https://adsense-projects-31337.firebaseio.com",
+    "project_id": "adsense-projects-31337",
+    "storage_bucket": "adsense-projects-31337.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998440559404:android:4a6e01393007a080",
+        "android_client_info": {
+          "package_name": "net.simontok.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998440559404-9ehs22s6vdfqve0s0bjmjgi9btif6fnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPuWI4WD1mv0Gb8D2jrgRO1uP6m1nPVQs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998440559404:android:109cd78a2ef09165",
+        "android_client_info": {
+          "package_name": "net.simontok.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998440559404-9ehs22s6vdfqve0s0bjmjgi9btif6fnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPuWI4WD1mv0Gb8D2jrgRO1uP6m1nPVQs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
