@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SiMontok</string>
+    <string name="app_name">GO-KEP</string>
     <string name="api_retry_error">Please retry!</string>
     <string name="api_default_error">Something wrong happened!</string>
     <string name="some_error">Some Error Occurred!</string>
@@ -22,4 +22,24 @@
     <string name="tos_app">Term of Use</string>
     <string name="tos_app_desc">Download and use this application that\'s mean Your age over than 21+</string>
     <string name="search">Search</string>
+    <string name="title_activity_maintenance">MaintenanceActivity</string>
+    <string name="maintenance">Under Maintenance</string>
+    <string name="add_to_watch_later">Add to Watch Later</string>
+    <string name="download">Download</string>
+    <string name="watch_later_list">Watch Later List</string>
+    <string name="watch_later_list_desc">Your watch later movies list here</string>
+    <string name="more">More</string>
+    <string name="interstitial">ca-app-pub-4156728717612204/4562413075</string>
+    <string name="comic">Comic</string>
+    <string name="libaries">Libraries</string>
+    <string name="library">Library</string>
+    <string name="read_manga">Read Manga</string>
+    <string name="adult_stories">Adult Stories</string>
+    <string name="permission_not_enabled">Permission not enable!</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_desc">Request feature, report bug or connect with dev</string>
+    <string name="update_desc">Download new version</string>
+    <string name="version">Version</string>
+    <string name="format_string">Version %1$s</string>
+    <string name="available_next_version">Available next version</string>
 </resources>

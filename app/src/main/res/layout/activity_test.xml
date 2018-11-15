@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:id="@+id/coordinatorLayout"
+                                                 android:background="@android:color/white"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+            android:visibility="invisible"
+            android:theme="@style/AppTheme.AppBarOverlay" android:id="@+id/appbar"
+                                                android:layout_width="match_parent"
+                                                android:background="@android:color/transparent"
+                                                android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                                           android:background="@android:color/transparent" android:layout_width="match_parent"
+                                           android:layout_height="?actionBarSize"
+                                           app:contentInsetStartWithNavigation="0dp"
+                                           app:layout_scrollFlags="enterAlwaysCollapsed"
+                                           app:popupTheme="@style/AppTheme.PopupOverlay"/>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/swiperefresh" android:layout_width="match_parent"
+                                                  android:layout_height="match_parent" android:layout_below="@+id/ca"
+                                                  app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v7.widget.RecyclerView android:id="@+id/recycler_view"
+                                                android:background="@android:color/white"
+                                                android:paddingBottom="?attr/actionBarSize"
+                                                android:clipToPadding="false" android:layout_width="match_parent"
+                                                android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <RelativeLayout android:id="@+id/action" android:paddingTop="?actionBarSize" android:visibility="gone"
+                    android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="16sp" android:gravity="center" android:id="@+id/tnoconnect"
+                  android:paddingLeft="40dp" android:paddingTop="10dp" android:paddingRight="40dp"
+                  android:paddingBottom="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Tidak ada koneksi internet" android:layout_centerInParent="true"
+                  android:lineSpacingExtra="5dp"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/searchbar" android:background="@android:color/white" android:visibility="gone"
+                    android:layout_width="match_parent" android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    <RelativeLayout android:id="@+id/player_con" android:visibility="visible" android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+            <RelativeLayout android:orientation="vertical" android:id="@+id/player_content"
+                            android:background="@android:color/black" android:layout_width="match_parent"
+                            android:layout_height="204dp">
+                <com.google.android.exoplayer2.ui.SimpleExoPlayerView android:id="@+id/player_view"
+                                                                      android:background="@android:color/transparent"
+                                                                      android:focusable="true"
+                                                                      android:layout_width="match_parent"
+                                                                      android:layout_height="match_parent"
+                                                                      app:controller_layout_id="@layout/exoplayer_custom"/>
+                <ProgressBar android:id="@+id/progressBar"
+                             android:visibility="invisible" android:layout_width="32dp"
+                             android:layout_height="35dp" android:layout_centerHorizontal="true"
+                             android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+
+            <ScrollView android:id="@+id/scrollView" android:background="@android:color/white" android:scrollbars="none"
+                        android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:fillViewport="true" android:layout_below="@+id/player_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent"
+                              android:layout_height="match_parent" android:layout_below="@+id/player_content">
+                    <TextView
+                            android:id="@+id/title"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:maxLines="2"
+                            android:paddingTop="@dimen/padding_16dp"
+                            android:paddingRight="@dimen/padding_16dp"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:paddingBottom="@dimen/padding_8dp"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:id="@+id/viewer"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="12sp"
+                            android:maxLines="1"
+                            android:paddingRight="@dimen/padding_16dp"
+                            android:paddingLeft="@dimen/padding_16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    <View
+                        android:background="@color/white_semi_blue"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_suggestion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+    <!--<RelativeLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical"-->
+                    <!--android:id="@+id/ad_container" android:background="@color/dark_gray" android:visibility="visible"-->
+                    <!--android:layout_width="match_parent" android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"/>-->
+    <!--<RelativeLayout android:id="@+id/oversearch" android:background="@android:color/white" android:visibility="gone"-->
+                    <!--android:layout_width="match_parent" android:layout_height="match_parent"-->
+                    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+    <!--<ProgressBar android:layout_gravity="center" android:id="@+id/progressBarh" android:visibility="gone"-->
+                 <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                 <!--style="?android:attr/progressBarStyle"/>-->
+</android.support.design.widget.CoordinatorLayout>

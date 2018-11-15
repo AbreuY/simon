@@ -94,7 +94,7 @@
                 android:id="@+id/txt_result_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black_effective"
+                android:textColor="@color/white_semi_blue"
                 android:textSize="18sp" />
     </LinearLayout>
 

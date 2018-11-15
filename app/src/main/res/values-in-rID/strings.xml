@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">GO-KEP</string>
+    <string name="api_retry_error">Coba lagi!</string>
+    <string name="api_default_error">Terjadi kesalahan!</string>
+    <string name="some_error">Beberapa Kesalahan Terjadi!</string>
+    <string name="connection_error">Koneksi internet hilang!</string>
+    <string name="app_market_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="app_google_play_store_link">https://play.google.com/store/apps/details?id=</string>
+    <string name="categories">Kategori</string>
+    <string name="home">Beranda</string>
+    <string name="category">Kategori</string>
+    <string name="live">TV</string>
+    <string name="setting">Pengaturan</string>
+    <string name="movie">Film</string>
+    <string name="live_stream">Siaran Langsung</string>
+    <string name="lock_app">Kunci Aplikasi</string>
+    <string name="lock_app_desc">Kunci aplikasi agar orang laiin tidak bisa membuka nya</string>
+    <string name="rate_app">Rate Aplikasi</string>
+    <string name="rate_app_desc">Rate application and give 5 star for better update</string>
+    <string name="hide_mature">Sembunyikan Konten Dewasa</string>
+    <string name="hide_mature_desc">Jika ini diaktifkan, hanya film yang akan ditampilkan</string>
+    <string name="tos_app">Term of Use</string>
+    <string name="tos_app_desc">Mengunduh dan menggunakan aplikasi ini yang berarti usia Anda lebih dari 21+</string>
+    <string name="search">Cari</string>
+    <string name="title_activity_maintenance">MaintenanceActivity</string>
+    <string name="maintenance">Under Maintenance</string>
+    <string name="add_to_watch_later">Tambahakan ke nonton nanti</string>
+    <string name="download">Download</string>
+    <string name="watch_later_list">Daftar tonton nanti</string>
+    <string name="watch_later_list_desc">Your watch later movies list here</string>
+    <string name="more">More</string>
+    <string name="interstitial">ca-app-pub-4156728717612204/4562413075</string>
+    <string name="comic">Komik</string>
+    <string name="libaries">Koleksi</string>
+    <string name="library">Koleksi</string>
+    <string name="read_manga">Baca Komik</string>
+    <string name="adult_stories">Cerita Dewasa</string>
+    <string name="permission_not_enabled">Izin tidak diberikan!</string>
+    <string name="feedback">Umpan balik</string>
+    <string name="feedback_desc">Minta fitur, laporkan bug atau hubungkan dengan developer</string>
+    <string name="update_desc">Download new version</string>
+    <string name="version">Version</string>
+    <string name="format_string">Versi %1$s</string>
+    <string name="available_next_version">Tersedia di versi verikutnya</string>
+</resources>
