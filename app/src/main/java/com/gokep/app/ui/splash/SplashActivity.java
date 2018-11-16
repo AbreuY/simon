@@ -45,13 +45,11 @@ public class SplashActivity extends BaseActivity implements SplashView {
         setUnBinder(ButterKnife.bind(this));
 
         mPresenter.onAttach(SplashActivity.this);
-
-        setUp();
         StartAppAd.showSplash(this, savedInstanceState,
-                new SplashConfig()
-                        .setTheme(SplashConfig.Theme.USER_DEFINED)
-                        .setCustomScreen(R.layout.activity_splash).setAppName(getString(R.string.app_name)).setLogo(R.drawable.gokep)
+                new SplashConfig().setAppName("").setLogo(R.drawable.gokep)
                         .setOrientation(SplashConfig.Orientation.PORTRAIT));
+        setUp();
+
     }
 
 

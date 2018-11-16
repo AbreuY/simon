@@ -27,6 +27,7 @@ import com.gokep.app.ui.helper.EndlessRecyclerViewScrollListener;
 import com.gokep.app.ui.helper.VerticalLineDecorator;
 import com.gokep.app.ui.stream.StreamActivity;
 import com.gokep.app.utils.AppLogger;
+import com.startapp.android.publish.adsCommon.StartAppAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class HomeFragment extends BaseFragment implements HomeView, MovAdapter.C
     @BindView(com.gokep.app.R.id.recycler_content)
     RecyclerView mRecyclerView;
     List<MovieResponse> list;
+    private StartAppAd startAppAd;
     public static HomeFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -64,6 +66,10 @@ public class HomeFragment extends BaseFragment implements HomeView, MovAdapter.C
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(com.gokep.app.R.layout.fragment_home, container, false);
 
+        startAppAd = new StartAppAd(getBaseActivity());
+        if (savedInstanceState!=null) {
+            startAppAd.onSaveInstanceState(savedInstanceState);
+        }
         ActivityComponent component = getActivityComponent();
         if (component != null) {
             component.inject(this);
@@ -89,6 +95,13 @@ public class HomeFragment extends BaseFragment implements HomeView, MovAdapter.C
         return view;
     }
 
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        if (savedInstanceState!=null) {
+            startAppAd.onRestoreInstanceState(savedInstanceState);
+        }
+        super.onViewStateRestored(savedInstanceState);
+    }
 
     @Override
     protected void setUp(View view) {
@@ -107,6 +120,7 @@ public class HomeFragment extends BaseFragment implements HomeView, MovAdapter.C
     @Override
     public void showContent(List<MovieResponse> contents) {
 //        list.remove(list.size()-1);
+        startAppAd.loadAd();
         if(contents.size()>0){
             //add loaded data
             list.addAll(contents);
@@ -123,22 +137,33 @@ public class HomeFragment extends BaseFragment implements HomeView, MovAdapter.C
 
     @Override
     public void onMovieSelected(MovieResponse movie) {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-
-            mInterstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdClosed() {
-                    mInterstitialAd.loadAd(adRequest);
-                    Intent intent = new Intent(getBaseActivity(), StreamActivity.class);
-                    intent.putExtra("movie", movie);
-                    startActivity(intent);
-                }
-            });
+//        if (mInterstitialAd.isLoaded()) {
+//            mInterstitialAd.show();
+//
+//            mInterstitialAd.setAdListener(new AdListener() {
+//                @Override
+//                public void onAdClosed() {
+//                    mInterstitialAd.loadAd(adRequest);
+//                    Intent intent = new Intent(getBaseActivity(), StreamActivity.class);
+//                    intent.putExtra("movie", movie);
+//                    startActivity(intent);
+//                }
+//            });
+//        } else {
+//            Intent intent = new Intent(getBaseActivity(), StreamActivity.class);
+//            intent.putExtra("movie", movie);
+//            startActivity(intent);
+//        }
+        if (startAppAd.isReady()) {
+            Intent intent = new Intent(getBaseActivity(), StreamActivity.class);
+            intent.putExtra("movie", movie);
+            startActivity(intent);
+            startAppAd.showAd();
         } else {
             Intent intent = new Intent(getBaseActivity(), StreamActivity.class);
             intent.putExtra("movie", movie);
             startActivity(intent);
+            startAppAd.loadAd();
         }
     }
 }

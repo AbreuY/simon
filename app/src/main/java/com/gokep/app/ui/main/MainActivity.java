@@ -35,6 +35,7 @@ import com.gokep.app.ui.search.SearchActivity;
 import com.gokep.app.ui.setting.SettingFragment;
 import com.gokep.app.utils.AppLogger;
 import com.gokep.app.utils.AppUtils;
+import com.startapp.android.publish.adsCommon.StartAppAd;
 import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
@@ -252,5 +253,11 @@ public class MainActivity extends BaseActivity implements MainView, BottomNaviga
 //            constrainHeight(frmVideoContainer.id, if (isPortrait()) 0 else getDeviceHeight())
 //            constrainWidth(frmVideoContainer.id, if (isPortrait()) 0 else getDeviceWidth())
 //        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        StartAppAd.onBackPressed(this);
+        super.onBackPressed();
     }
 }

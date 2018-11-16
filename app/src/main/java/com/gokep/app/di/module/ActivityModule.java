@@ -34,6 +34,8 @@ import com.gokep.app.utils.CommonUtils;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+import com.startapp.android.publish.adsCommon.StartAppSDK;
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.disposables.CompositeDisposable;
@@ -257,6 +259,11 @@ public class ActivityModule {
     StoryMvpPresenter<StoryView> provideStoryPresenter(
             StoryPresenter<StoryView> presenter) {
         return presenter;
+    }
+
+    @Provides
+    StartAppAd provideStartAppAd(Context context) {
+        return new StartAppAd(context);
     }
 
 //    @Provides

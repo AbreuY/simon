@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/lyt_search_adapter"
+             android:paddingLeft="@dimen/padding_left_4dp" android:paddingRight="@dimen/padding_right_4dp"
+             android:paddingBottom="@dimen/padding_bottom_1dp" android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center" android:orientation="horizontal"
+                  android:background="@color/white" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <RelativeLayout
+                android:id="@+id/img_container"
+                android:gravity="center" android:padding="@dimen/padding_4dp"
+                        android:layout_width="@dimen/width_150dp" android:layout_height="@dimen/height_90dp">
+            <ImageView android:id="@+id/image" android:layout_width="fill_parent"
+                       android:layout_height="fill_parent"
+                       android:scaleType="centerCrop"/>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:layout_gravity="center" android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+            </FrameLayout>
+
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/padding_4dp"
+                      android:layout_width="@dimen/nol_dp" android:layout_height="@dimen/height_90dp"
+                      android:layout_weight="1.0">
+            <LinearLayout android:layout_gravity="top" android:orientation="horizontal"
+                          android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:weightSum="5.0">
+                <TextView android:textSize="14sp" android:textColor="#000000"
+                          android:ellipsize="end" android:id="@id/title" android:layout_width="@dimen/nol_dp"
+                          android:layout_height="wrap_content" android:maxLines="2"
+                          android:layout_weight="4.0"/>
+                <LinearLayout android:gravity="right" android:layout_width="@dimen/nol_dp"
+                              android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:id="@+id/add_watch_later" android:layout_width="@dimen/width_24dp"
+                               android:layout_height="@dimen/height_24dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="fill_parent"
+                         android:layout_height="@dimen/nol_dp" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom"
+                              android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="12sp" android:textColor="@color/dark_gray"
+                              android:id="@+id/total_views" android:paddingRight="@dimen/padding_right_8dp"
+                              android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=""/>
+                    <TextView android:textSize="12sp" android:textColor="@color/dark_gray"
+                              android:gravity="right" android:id="@id/txt_time" android:visibility="visible"
+                              android:layout_width="@dimen/nol_dp" android:layout_height="wrap_content"
+                              android:layout_weight="1.0"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

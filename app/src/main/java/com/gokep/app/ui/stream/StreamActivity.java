@@ -55,6 +55,8 @@ import com.gokep.app.ui.main.home.MovAdapter;
 import com.gokep.app.ui.splash.SplashActivity;
 import com.gokep.app.utils.AppLogger;
 import com.gokep.app.utils.CommonUtils;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+import com.startapp.android.publish.adsCommon.StartAppSDK;
 import com.tonyodev.fetch2.*;
 import com.tonyodev.fetch2core.DownloadBlock;
 import com.tonyodev.fetch2core.Extras;
@@ -101,6 +103,9 @@ public class StreamActivity extends BaseActivity implements StreamView, Suggesti
     private SuggestionAdapter adapter;
     private Dialog mFullScreenDialog;
 
+    @Inject
+    StartAppAd startAppAd;
+
     private int mResumeWindow;
     private long mResumePosition;
     private MovieResponse movie;
@@ -112,11 +117,10 @@ public class StreamActivity extends BaseActivity implements StreamView, Suggesti
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.gokep.app.R.layout.activity_test);
-
         getActivityComponent().inject(this);
 
+        StartAppSDK.init(getApplicationContext(), "210576097", true);
         setUnBinder(ButterKnife.bind(this));
-
         presenter.onAttach(this);
         fetch = Fetch.Impl.getDefaultInstance();
         fetch.addListener(fetchListener);
@@ -138,12 +142,18 @@ public class StreamActivity extends BaseActivity implements StreamView, Suggesti
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-
+        startAppAd.onSaveInstanceState(outState);
         outState.putInt(STATE_RESUME_WINDOW, mResumeWindow);
         outState.putLong(STATE_RESUME_POSITION, mResumePosition);
         outState.putBoolean(STATE_PLAYER_FULLSCREEN, mExoPlayerFullscreen);
 
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        startAppAd.onRestoreInstanceState(savedInstanceState);
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     private void checkStoragePermission() {
@@ -423,7 +433,7 @@ public class StreamActivity extends BaseActivity implements StreamView, Suggesti
 
     @Override
     public void showContent(List<MovieResponse> contents) {
-
+        startAppAd.loadAd();
         if(contents.size()>0){
             //add loaded data
             list.addAll(contents);
@@ -443,30 +453,46 @@ public class StreamActivity extends BaseActivity implements StreamView, Suggesti
         Intent intent = new Intent(this, StreamActivity.class);
         intent.putExtra("movie", list.get(0));
         startActivity(intent);
+        startAppAd.showAd();
         finish();
     }
 
     @Override
     public void onMovieClick(MovieResponse movie) {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-
-            mInterstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdClosed() {
-                    mInterstitialAd.loadAd(adRequest);
-                    killPlayer();
-                    Intent intent = new Intent(getApplicationContext(), StreamActivity.class);
-                    intent.putExtra("movie", movie);
-                    startActivity(intent);
-                    finish();
-                }
-            });
-        } else {
+//        if (mInterstitialAd.isLoaded()) {
+//            mInterstitialAd.show();
+//
+//            mInterstitialAd.setAdListener(new AdListener() {
+//                @Override
+//                public void onAdClosed() {
+//                    mInterstitialAd.loadAd(adRequest);
+//                    killPlayer();
+//                    Intent intent = new Intent(getApplicationContext(), StreamActivity.class);
+//                    intent.putExtra("movie", movie);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            });
+//        } else {
+//            killPlayer();
+//            Intent intent = new Intent(getApplicationContext(), StreamActivity.class);
+//            intent.putExtra("movie", movie);
+//            startActivity(intent);
+//            finish();
+//        }
+        if (startAppAd.isReady()) {
             killPlayer();
-            Intent intent = new Intent(getApplicationContext(), StreamActivity.class);
+            Intent intent = new Intent(this, StreamActivity.class);
             intent.putExtra("movie", movie);
             startActivity(intent);
+            startAppAd.showAd();
+            finish();
+        } else {
+            killPlayer();
+            Intent intent = new Intent(this, StreamActivity.class);
+            intent.putExtra("movie", movie);
+            startActivity(intent);
+            startAppAd.loadAd();
             finish();
         }
     }
